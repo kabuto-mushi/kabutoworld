@@ -24,5 +24,10 @@ jobs:
       # specify any bash command here prefixed with `run: `
       - run: cd backend; go build main.go
       - run: go test -v ./... > test-results
+      
+      - store_artifacts: # Upload test summary for display in Artifacts: https://circleci.com/docs/2.0/artifacts/
+          path: /tmp/test-results
+          destination: raw-test-output
+      
       - store_test_results:
           path: test-results
