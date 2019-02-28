@@ -25,4 +25,4 @@ jobs:
       - run: cd backend; go build main.go
       - run: go test -v ./...
       - store_test_results:
-        path: test-results
+          path: test-results
