@@ -23,6 +23,6 @@ jobs:
 
       # specify any bash command here prefixed with `run: `
       - run: cd backend; go build main.go
-      - run: go test -v ./...
+      - run: go test -v ./... > test-results
       - store_test_results:
           path: test-results
