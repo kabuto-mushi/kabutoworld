@@ -20,8 +20,8 @@ steps:
   env:
   - REPORT_ID=$BUILD_ID
   - REPORT_PROJECT=$PROJECT_ID
-  - REPORT_ORG=GoogleCloudPlatform
-  - REPORT_REPO=golang-samples
+  - REPORT_ORG=kabuto-mushi
+  - REPORT_REPO=kabutoworld
 
 # Get the credentials for integration tests.
 - name: gcr.io/cloud-builders/gsutil
@@ -35,9 +35,8 @@ steps:
 - name: debian
   args: ['bash', '-c',
     'rm -rf
-    gopath/src/github.com/GoogleCloudPlatform/golang-samples
-    gopath/pkg/**/github.com/GoogleCloudPlatform/golang-samples'
-  ]
+    gopath/src/github.com/kabuto-mushi/kabutoworld
+    gopath/pkg/**/github.com/kabuto-mushi/kabutoworld
 
 # Build the image with newly downloaded deps.
 - name: gcr.io/cloudbuild-report/cacher
